@@ -1,0 +1,30 @@
+{
+  "name": "reactjs-localstorage",
+  "version": "0.0.6",
+  "description": "Easy use localstorage in Reactjs",
+  "main": "react-localstorage.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/null-none/react-localstorage.git"
+  },
+  "keywords": [
+    "reactjs",
+    "localstorage",
+    "react",
+    "local storage"
+  ],
+  "bugs": {
+    "url": "https://github.com/null-none/react-localstorage/issues"
+  },
+  "homepage": "https://github.com/null-none/react-localstorage",
+  "author": {
+    "name": "Dmitry Kalinin"
+  },
+  "license": "MIT",
+  "readme": "# reactLocalStorage\n\nEasy use localstorage in Reactjs\n\n\n## Install\n\n```bash\nnpm install reactjs-localstorage\n```\n\n## Example\n\n```javascript\nimport {reactLocalStorage} from 'reactjs-localstorage';\n\nreactLocalStorage.set('var', true);\nreactLocalStorage.get('var', true);\nreactLocalStorage.setObject('var', {'test': 'test'});\nreactLocalStorage.getObject('var');\n```\n\n## License\n\nMIT\n",
+  "readmeFilename": "README.md",
+  "_id": "reactjs-localstorage@0.0.6",
+  "_shasum": "1fe60889099738ea8f3218069eae9be5af856442",
+  "_from": "reactjs-localstorage@0.0.6",
+  "_resolved": "https://registry.npmjs.org/reactjs-localstorage/-/reactjs-localstorage-0.0.6.tgz"
+}

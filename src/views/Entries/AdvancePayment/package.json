@@ -1,0 +1,6 @@
+{
+  "name": "Delivery Note",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./DeliveryNote.js"
+}
