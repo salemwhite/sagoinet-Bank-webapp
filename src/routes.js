@@ -63,11 +63,11 @@ const BankBalanceRegister = React.lazy(() =>
   import("./views/Reports/BankBalanceRegister/BankBalanceRegister")
 );
 
-
+const Login = React.lazy(() => import("./views/Pages/Login/Login"));
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
-  { path: "/", exact: true, name: "Home" },
+  { path: "/", exact: true, name: "Login" , component: Login },
   { path: "/dashboard", name: "Dashboard", component: Dashboard },
   
 
