@@ -1,5 +1,7 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component, useState } from "react";
+import { Link, Route, useHistory } from "react-router-dom";
+import { reactLocalStorage} from '../../../reactjs-localstorage/react-localstorage'
+import  Dashboard  from '../../Dashboard/Dashboard'
 import {
   Button,
   Card,
@@ -14,12 +16,27 @@ import {
   InputGroupText,
   Row,
 } from "reactstrap";
-const submit = async (ev) => {};
-class Login extends Component {
-  render() {
+
+
+
+const Login = ()=> {
+ const history = useHistory()
+ const [Authenticate, setAuthenticate] = useState(false)
+ const submit = (ev) => {
+    const isAuthenticated = true
+    reactLocalStorage.set('userName', 'venky')
+    reactLocalStorage.set('authenticated', isAuthenticated)
+    console.log(localStorage)
+    if(isAuthenticated){
+      history.push('/dashboard');
+    }
+    setAuthenticate(isAuthenticated)
+  };
+  // render() {
     return (
-      <div className="app flex-row align-items-center">
-        <Container>
+      <div>
+      { !Authenticate  ? <div className="app flex-row align-items-center">
+         <Container>
           <Row className="justify-content-center">
             <Col md="8">
               <CardGroup>
@@ -87,10 +104,11 @@ class Login extends Component {
               </CardGroup>
             </Col>
           </Row>
-        </Container>
+        </Container> 
+      </div> : <Dashboard /> }
       </div>
     );
-  }
+  // }
 }
 
 export default Login;

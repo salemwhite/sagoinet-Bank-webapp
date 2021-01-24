@@ -2,6 +2,7 @@ import React, { Component, Suspense } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import * as router from "react-router-dom";
 import { Container } from "reactstrap";
+import ProtectedRoute from '../../protectedRoute';
 
 import {
   AppAside,
@@ -61,18 +62,20 @@ class DefaultLayout extends Component {
             <Container fluid>
               <Suspense fallback={this.loading()}>
                 <Switch>
+                  {/* <Route path="/login" component={Login} /> */}
                   {routes.map((route, idx) => {
                     return route.component ? (
-                      <Route
-                        key={idx}
-                        path={route.path}
-                        exact={route.exact}
-                        name={route.name}
-                        render={(props) => <route.component {...props} />}
-                      />
+                      <ProtectedRoute key={idx} exact={route.exact} name={route.name} path={route.path} component={route.component} /> 
+                      // <Route
+                      //   key={idx}
+                      //   path={route.path}
+                      //   exact={route.exact}
+                      //   name={route.name}
+                      //   render={(props) => <route.component {...props} />}
+                      // />
                     ) : null;
                   })}
-                  <Redirect from="/" to="/dashboard" />
+                  {/* <Redirect from="/" to="/dashboard" /> */}
                   {/* <Redirect from="/" to ="/Login"/> */}
                 </Switch>
               </Suspense>
